@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.EditAppController">
+    <children>
+        <AnchorPane layoutX="188.0" prefHeight="644.0" prefWidth="740.0" style="-fx-background-color: white;">
+            <children>
+                <AnchorPane layoutX="7.0" prefHeight="47.0" prefWidth="108.0">
+                    <children>
+                        <Label layoutX="15.0" layoutY="15.0" text="Edit Appointment" textFill="#1cbdc6">
+                            <font>
+                                <Font size="24.0" />
+                            </font></Label>
+                    </children></AnchorPane>
+                <AnchorPane layoutX="377.0" layoutY="7.0" prefHeight="47.0" prefWidth="129.0" />
+                <AnchorPane layoutY="84.0" prefHeight="345.0" prefWidth="517.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="25.0" layoutY="34.0" text="Date">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="88.0" text="Time">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="140.0" text="Patient Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="169.0" layoutY="32.0" />
+                  <TextField layoutX="174.0" layoutY="138.0" />
+                  <TextField layoutX="172.0" layoutY="86.0" prefHeight="27.0" prefWidth="161.0" />
+                  <Button fx:id="searchbutton" layoutX="227.0" layoutY="194.0" mnemonicParsing="false" onAction="#searchbuttonclick" style="-fx-background-color: #1cbdc6;" text="Search" />
+               </children></AnchorPane>
+                <Button layoutX="613.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Abbie Foy ☻" textFill="#1cbdc6">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            </children></AnchorPane>
+        <AnchorPane layoutY="-2.0" prefHeight="644.0" prefWidth="185.0" style="-fx-background-color: #1cbdc6;">
+            <children>
+                <Button layoutX="10.0" layoutY="23.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" style="-fx-background-color: #1cbdc6;" text="⌂" textFill="WHITE">
+                    <font>
+                        <Font size="64.0" />
+                    </font></Button>
+                <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" style="-fx-background-color: #1cbdc6;" text="◷" textFill="WHITE">
+                    <font>
+                        <Font size="48.0" />
+                    </font></Button>
+                <Button layoutX="10.0" layoutY="226.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" style="-fx-background-color: #1cbdc6;" text="⚙" textFill="WHITE">
+                    <font>
+                        <Font size="48.0" />
+                    </font></Button>
+            </children>
+            <effect>
+                <DropShadow />
+            </effect>
+        </AnchorPane>
+    </children>
+</AnchorPane>
