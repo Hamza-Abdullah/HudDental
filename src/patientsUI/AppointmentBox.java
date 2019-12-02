@@ -12,7 +12,7 @@ class AppointmentBox extends VBox {
     private Button changeButton;
     private Button cancelButton;
 
-    AppointmentBox(String date, String time, String appointment, String dentist, String room){
+    AppointmentBox(String date, String time, String appointment, String dentist, String room) {
         super();
         this.setStyle("-fx-background-color: #80CEE1");
         this.setPadding(new Insets(40, 40, 40, 40));
