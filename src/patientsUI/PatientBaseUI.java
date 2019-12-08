@@ -1,6 +1,9 @@
 package patientsUI;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -9,11 +12,17 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class PatientBaseUI extends Pane {
+    private Stage primaryStage;
+    private Scene scene;
     private VBox mainVBox;
 
-    public PatientBaseUI() {
+    public PatientBaseUI(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        this.scene = scene;
+
         this.setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
 
         HBox mainHBox = new HBox();
@@ -30,10 +39,20 @@ public class PatientBaseUI extends Pane {
         Button appointmentsButton = new Button("Appointments");
         appointmentsButton.setMinWidth(140);
         appointmentsButton.setMinHeight(140);
+        appointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+            }
+        });
 
         Button notificationsButton = new Button("Notifications");
         notificationsButton.setMinWidth(140);
         notificationsButton.setMinHeight(140);
+        notificationsButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+            }
+        });
 
         sideBar.getChildren().addAll(logOutButton, appointmentsButton, notificationsButton);
         mainHBox.getChildren().add(sideBar);
@@ -63,5 +82,9 @@ public class PatientBaseUI extends Pane {
 
     public VBox getMainVBox() {
         return this.mainVBox;
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
     }
 }
