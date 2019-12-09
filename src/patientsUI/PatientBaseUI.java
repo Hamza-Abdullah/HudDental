@@ -3,7 +3,6 @@ package patientsUI;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -16,12 +15,11 @@ import javafx.stage.Stage;
 
 public class PatientBaseUI extends Pane {
     private Stage primaryStage;
-    private Scene scene;
     private VBox mainVBox;
+    private Label title;
 
-    public PatientBaseUI(Stage primaryStage) {
+    public PatientBaseUI(Stage primaryStage, AppointmentUIMain controller) {
         this.primaryStage = primaryStage;
-        this.scene = scene;
 
         this.setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
 
@@ -42,6 +40,7 @@ public class PatientBaseUI extends Pane {
         appointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                controller.switchScene(new PatientAppointmentUI(primaryStage, controller));
             }
         });
 
@@ -51,6 +50,7 @@ public class PatientBaseUI extends Pane {
         notificationsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                controller.switchScene(new PatientNotificationsUI(primaryStage, controller));
             }
         });
 
@@ -64,7 +64,7 @@ public class PatientBaseUI extends Pane {
         AnchorPane topAnchorPane = new AnchorPane();
         mainVBox.getChildren().add(topAnchorPane);
 
-        Label title = new Label("Your Appointments");
+        title = new Label();
         title.setPadding(new Insets(45, 0, 0, 20));
         title.setFont(new Font("Arial Black", 60));
         title.setTextFill(Color.rgb(128, 206, 225));
@@ -86,5 +86,9 @@ public class PatientBaseUI extends Pane {
 
     public Stage getPrimaryStage() {
         return primaryStage;
+    }
+
+    public void setTitle(String string) {
+        this.title.setText(string);
     }
 }
