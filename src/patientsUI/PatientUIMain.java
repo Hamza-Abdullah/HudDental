@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class AppointmentUIMain extends Application {
+public class PatientUIMain extends Application {
     private Stage primaryStage;
 
     @Override

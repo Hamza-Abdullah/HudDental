@@ -18,7 +18,7 @@ public class PatientBaseUI extends Pane {
     private VBox mainVBox;
     private Label title;
 
-    public PatientBaseUI(Stage primaryStage, AppointmentUIMain controller) {
+    public PatientBaseUI(Stage primaryStage, PatientUIMain controller) {
         this.primaryStage = primaryStage;
 
         this.setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");

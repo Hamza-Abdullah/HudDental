@@ -30,5 +30,4 @@ public class NotificationBox extends VBox {
     public void setNotificationLabel(String string){
         this.notificationLabel.setText(string);
     }
-
 }

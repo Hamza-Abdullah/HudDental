@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class PatientAppointmentUI extends PatientBaseUI {
     private FlowPane flowPane;
 
-    public PatientAppointmentUI(Stage primaryStage, AppointmentUIMain controller) {
+    public PatientAppointmentUI(Stage primaryStage, PatientUIMain controller) {
         super(primaryStage, controller);
         setTitle("Your Appointments");
         this.flowPane = new FlowPane();
@@ -25,7 +25,7 @@ public class PatientAppointmentUI extends PatientBaseUI {
                 new AppointmentBox(date, time, appointment, dentist, room, this.flowPane, this.getPrimaryStage()));
     }
 
-    public void testData(){
+    private void testData(){
         addAppointment("18th December 2019", "14:30", "Dental X-Ray", "Dr Winters", "Examination Room 3");
         addAppointment("18th December 2019", "14:30", "Dental X-Ray", "Dr Winters", "Examination Room 3");
         addAppointment("18th December 2019", "14:30", "Dental X-Ray", "Dr Winters", "Examination Room 3");
