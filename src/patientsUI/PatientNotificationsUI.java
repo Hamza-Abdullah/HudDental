@@ -3,13 +3,12 @@ package patientsUI;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class PatientNotificationsUI extends PatientBaseUI{
     private VBox notificationVBox;
 
-    public PatientNotificationsUI(Stage primaryStage, PatientUIMain controller) {
-        super(primaryStage, controller);
+    public PatientNotificationsUI(PatientUIMain controller) {
+        super(controller);
         setTitle("Your Notifications");
 
         notificationVBox = new VBox();

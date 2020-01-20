@@ -11,16 +11,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 public class PatientBaseUI extends Pane {
-    private Stage primaryStage;
+    private PatientUIMain controller;
     private VBox mainVBox;
     private Label title;
 
-    public PatientBaseUI(Stage primaryStage, PatientUIMain controller) {
-        this.primaryStage = primaryStage;
-
+    public PatientBaseUI(PatientUIMain controller) {
+        this.controller = controller;
         this.setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
 
         HBox mainHBox = new HBox();
@@ -40,7 +38,7 @@ public class PatientBaseUI extends Pane {
         appointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                controller.switchScene(new PatientAppointmentUI(primaryStage, controller));
+                controller.appointmentsPage();
             }
         });
 
@@ -50,7 +48,7 @@ public class PatientBaseUI extends Pane {
         notificationsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                controller.switchScene(new PatientNotificationsUI(primaryStage, controller));
+                controller.notificationsPage();
             }
         });
 
@@ -84,11 +82,11 @@ public class PatientBaseUI extends Pane {
         return this.mainVBox;
     }
 
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
-
     public void setTitle(String string) {
         this.title.setText(string);
+    }
+
+    public PatientUIMain getController(){
+        return controller;
     }
 }

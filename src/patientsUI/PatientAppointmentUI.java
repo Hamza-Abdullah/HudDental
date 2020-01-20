@@ -2,13 +2,12 @@ package patientsUI;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 
 public class PatientAppointmentUI extends PatientBaseUI {
     private FlowPane flowPane;
 
-    public PatientAppointmentUI(Stage primaryStage, PatientUIMain controller) {
-        super(primaryStage, controller);
+    public PatientAppointmentUI(PatientUIMain controller) {
+        super(controller);
         setTitle("Your Appointments");
         this.flowPane = new FlowPane();
         flowPane.setPadding(new Insets(40, 40, 40, 40));
@@ -22,7 +21,7 @@ public class PatientAppointmentUI extends PatientBaseUI {
 
     public void addAppointment(String date, String time, String appointment, String dentist, String room) {
         this.flowPane.getChildren().add(
-                new AppointmentBox(date, time, appointment, dentist, room, this.flowPane, this.getPrimaryStage()));
+                new AppointmentBox(date, time, appointment, dentist, room, this.flowPane, getController().getPrimaryStage()));
     }
 
     private void testData(){

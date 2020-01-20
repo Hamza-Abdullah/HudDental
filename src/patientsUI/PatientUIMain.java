@@ -2,23 +2,37 @@ package patientsUI;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class PatientUIMain extends Application {
     private Stage primaryStage;
+    private Scene appointments, notifications;
 
     @Override
     public void start(Stage primaryStage){
         this.primaryStage = primaryStage;
         primaryStage.setTitle("HudDental");
-        PatientAppointmentUI appointmentUI = new PatientAppointmentUI(primaryStage, this);
-        primaryStage.setScene(new Scene(appointmentUI, 300, 275));
+
+        PatientAppointmentUI appointmentUI = new PatientAppointmentUI(this);
+        appointments = new Scene(appointmentUI);
+
+        PatientNotificationsUI notificationsUI = new PatientNotificationsUI(this);
+        notifications = new Scene(notificationsUI);
+
+        appointmentsPage();
         primaryStage.show();
     }
 
-    public void switchScene(Pane ui){
-        this.primaryStage.setScene(new Scene(ui));
+    public void appointmentsPage(){
+        primaryStage.setScene(appointments);
+    }
+
+    public void notificationsPage(){
+        primaryStage.setScene(notifications);
+    }
+
+    public Stage getPrimaryStage(){
+        return primaryStage;
     }
 
     public static void main(String[] args) {
