@@ -11,20 +11,18 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 public class PatientBaseUI extends Pane {
-    private Stage primaryStage;
+    private PatientUIMain controller;
     private VBox mainVBox;
     private Label title;
 
-    public PatientBaseUI(Stage primaryStage, AppointmentUIMain controller) {
-        this.primaryStage = primaryStage;
-
-        this.setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
+    public PatientBaseUI(PatientUIMain controller) {
+        this.controller = controller;
+        setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
 
         HBox mainHBox = new HBox();
-        this.getChildren().add(mainHBox);
+        getChildren().add(mainHBox);
 
         VBox sideBar = new VBox();
         sideBar.setPadding(new Insets(40, 60, 0, 60));
@@ -40,7 +38,7 @@ public class PatientBaseUI extends Pane {
         appointmentsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                controller.switchScene(new PatientAppointmentUI(primaryStage, controller));
+                controller.appointmentsPage();
             }
         });
 
@@ -50,14 +48,14 @@ public class PatientBaseUI extends Pane {
         notificationsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                controller.switchScene(new PatientNotificationsUI(primaryStage, controller));
+                controller.notificationsPage();
             }
         });
 
         sideBar.getChildren().addAll(logOutButton, appointmentsButton, notificationsButton);
         mainHBox.getChildren().add(sideBar);
 
-        this.mainVBox = new VBox();
+        mainVBox = new VBox();
 
         mainHBox.getChildren().add(mainVBox);
 
@@ -81,14 +79,14 @@ public class PatientBaseUI extends Pane {
     }
 
     public VBox getMainVBox() {
-        return this.mainVBox;
-    }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
+        return mainVBox;
     }
 
     public void setTitle(String string) {
-        this.title.setText(string);
+        title.setText(string);
+    }
+
+    public PatientUIMain getController(){
+        return controller;
     }
 }
