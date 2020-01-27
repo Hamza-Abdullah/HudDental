@@ -19,10 +19,10 @@ public class PatientBaseUI extends Pane {
 
     public PatientBaseUI(PatientUIMain controller) {
         this.controller = controller;
-        this.setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
+        setStyle("-fx-background-color: #80CEE1, #ffffff; -fx-background-insets: 0, 0 0 0 260;");
 
         HBox mainHBox = new HBox();
-        this.getChildren().add(mainHBox);
+        getChildren().add(mainHBox);
 
         VBox sideBar = new VBox();
         sideBar.setPadding(new Insets(40, 60, 0, 60));
@@ -55,7 +55,7 @@ public class PatientBaseUI extends Pane {
         sideBar.getChildren().addAll(logOutButton, appointmentsButton, notificationsButton);
         mainHBox.getChildren().add(sideBar);
 
-        this.mainVBox = new VBox();
+        mainVBox = new VBox();
 
         mainHBox.getChildren().add(mainVBox);
 
@@ -79,11 +79,11 @@ public class PatientBaseUI extends Pane {
     }
 
     public VBox getMainVBox() {
-        return this.mainVBox;
+        return mainVBox;
     }
 
     public void setTitle(String string) {
-        this.title.setText(string);
+        title.setText(string);
     }
 
     public PatientUIMain getController(){

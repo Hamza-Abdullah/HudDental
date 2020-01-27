@@ -14,10 +14,10 @@ public class PatientUIMain extends Application {
         primaryStage.setTitle("HudDental");
 
         PatientAppointmentUI appointmentUI = new PatientAppointmentUI(this);
-        appointments = new Scene(appointmentUI);
+        appointments = new Scene(appointmentUI, 1900, 1000);
 
         PatientNotificationsUI notificationsUI = new PatientNotificationsUI(this);
-        notifications = new Scene(notificationsUI);
+        notifications = new Scene(notificationsUI, 1900, 1000);
 
         appointmentsPage();
         primaryStage.show();

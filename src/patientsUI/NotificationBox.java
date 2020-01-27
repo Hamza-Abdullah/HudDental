@@ -10,24 +10,24 @@ public class NotificationBox extends VBox {
     private Label notificationLabel;
 
     public NotificationBox() {
-        this.setStyle("-fx-background-color: #80CEE1");
-        this.setFillWidth(false);
-        this.setPadding(new Insets(10, 10, 10, 10));
+        setStyle("-fx-background-color: #80CEE1");
+        setFillWidth(false);
+        setPadding(new Insets(10, 10, 10, 10));
 
-        this.timeLabel = new Label();
-        this.timeLabel.setFont(new Font("Arial Black", 15));
+        timeLabel = new Label();
+        timeLabel.setFont(new Font("Arial Black", 15));
 
-        this.notificationLabel = new Label();
-        this.notificationLabel.setFont(new Font("Arial Black", 20));
+        notificationLabel = new Label();
+        notificationLabel.setFont(new Font("Arial Black", 20));
 
-        this.getChildren().addAll(timeLabel, notificationLabel);
+        getChildren().addAll(timeLabel, notificationLabel);
     }
 
     public void setTimeLabel(String string){
-        this.timeLabel.setText(string);
+        timeLabel.setText(string);
     }
 
     public void setNotificationLabel(String string){
-        this.notificationLabel.setText(string);
+        notificationLabel.setText(string);
     }
 }

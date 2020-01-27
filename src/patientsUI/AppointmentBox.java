@@ -13,16 +13,13 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 class AppointmentBox extends VBox {
-    private Button checkInButton;
-    private Button changeButton;
-    private Button cancelButton;
 
     AppointmentBox(String date, String time, String appointment, String dentist, String room, FlowPane flowPane, Stage primaryStage) {
         super();
-        this.setStyle("-fx-background-color: #80CEE1");
-        this.setPadding(new Insets(40, 40, 40, 40));
-        this.setSpacing(10);
-        this.setMaxWidth(USE_COMPUTED_SIZE);
+        setStyle("-fx-background-color: #80CEE1");
+        setPadding(new Insets(40, 40, 40, 40));
+        setSpacing(10);
+        setMaxWidth(USE_COMPUTED_SIZE);
 
         Font labelFont = new Font("Arial Black", 25);
 
@@ -41,18 +38,21 @@ class AppointmentBox extends VBox {
         Label roomLabel = new Label(room);
         roomLabel.setFont(labelFont);
 
-        this.getChildren().addAll(dateLabel, timeLabel, appointmentLabel, dentistLabel, roomLabel);
+        getChildren().addAll(dateLabel, timeLabel, appointmentLabel, dentistLabel, roomLabel);
 
         HBox hBox = new HBox();
-        this.getChildren().add(hBox);
+        getChildren().add(hBox);
 
         Font buttonFont = new Font("Arial Black", 15);
 
-        checkInButton = new Button("Check In");
+        //check in button
+        Button checkInButton = new Button("Check In");
         checkInButton.setFont(buttonFont);
+
         if (/*currentDate != appointmentDate*/true){
             checkInButton.setDisable(true);
         }
+
         checkInButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -61,7 +61,8 @@ class AppointmentBox extends VBox {
             }
         });
 
-        changeButton = new Button("Request Change");
+        //change button
+        Button changeButton = new Button("Request Change");
         changeButton.setFont(buttonFont);
         changeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -73,7 +74,8 @@ class AppointmentBox extends VBox {
             }
         });
 
-        cancelButton = new Button("Cancel");
+        //cancel button
+        Button cancelButton = new Button("Cancel");
         cancelButton.setFont(buttonFont);
         cancelButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
