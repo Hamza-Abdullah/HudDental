@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.reqtoleave">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="640.0">
+         <children>
+            <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TabPane layoutX="218.0" layoutY="63.0" prefHeight="317.0" prefWidth="410.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Leave form">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="250.0">
+                                 <children>
+                                    <TextArea layoutX="7.0" prefHeight="231.0" prefWidth="381.0" text="NAME:  &#9;&#9;                   ID:  &#9;&#10;&#10;TYPE OF LEAVE TO BE TAKEN:  &#10;Vacation         &#9;        Floating Holiday     &#9;    Compensatory Time&#10;&#10;DATE(S)/TIME(S) TO BE TAKEN:  &#9;&#10;&#10;COMMENTS:  &#9;&#10;&#10;&#9;&#10;&#10;SUPERVISOR’S &#10;APPROVAL:  &#9;&#9;                DATE:  &#9;&#10;&#10;COMMENTS:  &#9;&#10;&#10;&#9;&#10;" />
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="send.">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="184.0" layoutY="132.0" mnemonicParsing="false" text="send" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <HBox alignment="CENTER" layoutX="-10.0" layoutY="-10.0" maxWidth="-Infinity" prefWidth="166.0" style="-fx-background-color: #0FBCF9;">
+                     <children>
+                        <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../IdeaProjects/GUI/src/Images/tooth.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" text="HudDental">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" layoutX="479.0" layoutY="-14.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="38.0">
+                           <children>
+                              <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../IdeaProjects/GUI/src/Images/bell.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="cursor_hand" />
+                              <String fx:value="hover_top" />
+                           </styleClass>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="92.0">
+                           <children>
+                              <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../IdeaProjects/GUI/src/Images/user.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-fill: #48546C;" text="Joe Bloggs" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="cursor_hand" />
+                              <String fx:value="hover_top" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <VBox layoutX="-9.0" layoutY="103.0" prefHeight="200.0" prefWidth="109.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../IdeaProjects/GUI/src/Images/form.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Request Form">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="hover_border" />
+                              <String fx:value="cursor_hand" />
+                           </styleClass>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../IdeaProjects/GUI/src/Images/calendar.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Schedule">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="hover_border" />
+                              <String fx:value="cursor_hand" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <HBox style="-fx-background-color: WHITE;" />
+            <HBox alignment="CENTER_RIGHT" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
