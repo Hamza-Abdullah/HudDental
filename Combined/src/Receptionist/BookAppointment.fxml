@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="978.0" style="-fx-background-color: #E9E9E9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.BookAppointmentController">
+   <top>
+      <HBox style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="166.0" style="-fx-background-color: #0FBCF9;">
+               <children>
+                  <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/tooth.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" text="HudDental">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="38.0">
+                     <children>
+                        <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/bell.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="cursor_hand" />
+                        <String fx:value="hover_top" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="92.0">
+                     <children>
+                        <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/user.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fx:id="staffName" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-fill: #48546C;" text="Joe Bloggs" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="cursor_hand" />
+                        <String fx:value="hover_top" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox maxWidth="-Infinity" prefWidth="166.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/dashboard.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="dashboardButton" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Dashboard">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="hover_border" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/calendar.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="bookButton" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Book Appointment">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="hover_border" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#registerPatient">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/form.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Register Patient">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="hover_border" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </HBox>
+            <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/settings.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Settings">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <styleClass>
+                        <String fx:value="hover_border" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#logout">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/logout.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="logoutButton" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Log Out">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <styleClass>
+                        <String fx:value="hover_border" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="256.0" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <Label style="-fx-text-fill: #48546C;" text="Treatment">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="treatmentField" prefWidth="256.0" />
+                  <Label style="-fx-text-fill: #48546C;" text="Phone number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneField" layoutX="10.0" layoutY="27.0" />
+                  <Label layoutX="10.0" layoutY="52.0" style="-fx-text-fill: #48546C;" text="Date of birth">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dobField" />
+                  <Label style="-fx-text-fill: #48546C;" text="Date of appointment">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="appointmentDateField" layoutX="10.0" layoutY="142.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="256.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <Label style="-fx-text-fill: #48546C;" text="Time (Format HH:mm)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="timeField" />
+                  <Label style="-fx-text-fill: #48546C;" text="Dentist">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="dentistField" disable="true" prefWidth="256.0" />
+                  <Label style="-fx-text-fill: #48546C;" text="Nurse">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="nurseField" disable="true" layoutX="10.0" layoutY="90.0" prefWidth="256.0" />
+                  <Label style="-fx-text-fill: #48546C;" text="Room">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="roomField" disable="true" layoutX="10.0" layoutY="142.0" prefWidth="256.0" />
+                  <Label layoutX="10.0" layoutY="167.0" style="-fx-text-fill: #48546C;" text="Notes">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="notesField" prefHeight="71.0" prefWidth="256.0" wrapText="true" />
+               </children>
+            </VBox>
+            <Text fx:id="statusText" fill="#48546c" strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Not submitted" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="64.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <FlowPane prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="submitBtn" mnemonicParsing="false" onMouseClicked="#submitBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Submit">
+               <FlowPane.margin>
+                  <Insets top="56.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="clearBtn" layoutX="10.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#clearBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Clear">
+               <FlowPane.margin>
+                  <Insets top="24.0" />
+               </FlowPane.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </FlowPane>
+   </right>
+</BorderPane>

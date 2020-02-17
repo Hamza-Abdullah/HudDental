@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="978.0" style="-fx-background-color: #E9E9E9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.RegisterPatientController">
+   <top>
+      <HBox style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="166.0" style="-fx-background-color: #0FBCF9;">
+               <children>
+                  <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/tooth.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" text="HudDental">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="256.0" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <Label style="-fx-text-fill: #48546C;" text="First name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstNameField" />
+                  <Label style="-fx-text-fill: #48546C;" text="Surname">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="surnameField" layoutX="10.0" layoutY="27.0" />
+                  <Label layoutX="10.0" layoutY="52.0" style="-fx-text-fill: #48546C;" text="Date of birth">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dobField" />
+                  <Label style="-fx-text-fill: #48546C;" text="Contact number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneField" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="256.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <Label style="-fx-text-fill: #48546C;" text="House number">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="houseNumField" />
+                  <Label style="-fx-text-fill: #48546C;" text="Street name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="streetField" />
+                  <Label style="-fx-text-fill: #48546C;" text="City">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cityField" />
+                  <Label style="-fx-text-fill: #48546C;" text="Postcode">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="postcodeField" />
+               </children>
+            </VBox>
+            <Text fx:id="statusText" fill="#48546c" strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Not submitted" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="64.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <FlowPane prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="submitBtn" mnemonicParsing="false" onMouseClicked="#submitBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Submit">
+               <FlowPane.margin>
+                  <Insets top="56.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="closeBtn" layoutX="10.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#cancelBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Close">
+               <FlowPane.margin>
+                  <Insets top="24.0" />
+               </FlowPane.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </FlowPane>
+   </right>
+</BorderPane>
