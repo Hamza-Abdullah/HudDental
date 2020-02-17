@@ -55,9 +55,11 @@ public class LoginController {
 
                 if (isRegistered == LoginQueries.PATIENT_NUMBER){
                     //load patient UI
+                    System.out.println("Patient");
                 }
                 else {
                     //load staff UI
+                    System.out.println("Staff");
                 }
             }
         });

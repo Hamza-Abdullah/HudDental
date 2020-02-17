@@ -29,6 +29,10 @@ public class LoginQueries {
     }
 
     public static String getPassword(int numType, String phoneNum){
+        return BCrypt.hashpw("password", BCrypt.gensalt());
+        /*
+        Passwords not currently being stored in database
+
         if (numType == PATIENT_NUMBER){
             ArrayList<HashMap<String, Object>> patient = rawQuery(
                     "SELECT patient_password FROM patients " +
@@ -43,6 +47,7 @@ public class LoginQueries {
             );
             return (String) staff.get(0).get("staff_password");
         }
+        */
     }
 
     private static ArrayList<HashMap<String,Object>> rawQuery(String fullCommand) {
@@ -50,6 +55,8 @@ public class LoginQueries {
         Statement stm = null;
         ResultSet result = null;
         try {
+            Class.forName("com.mysql.jdbc.Driver");
+
             huddental = DriverManager.getConnection("jdbc:mysql://huddental.cw4ubd44egzz.eu-west-2.rds.amazonaws.com:3306/HudDental", "admin", "T34mpr0ject");
 
             // Creates statement
