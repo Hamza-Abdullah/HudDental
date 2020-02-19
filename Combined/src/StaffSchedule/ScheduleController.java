@@ -45,7 +45,7 @@ public class ScheduleController implements Initializable {
 
     public boolean IsStaff;
     public Text staffName;
-    public static int staffID = LoginController.staffID;
+    public int staffID = LoginController.staffID;
 
     Calendar cal = new Calendar("cal");
     public Button btnDay;
@@ -90,7 +90,6 @@ public class ScheduleController implements Initializable {
     }
 
     public void addDayEntries() {
-
         CalendarSource calendarSource = new CalendarSource("Appointments");
         Calendar c = new Calendar("Day");
 
@@ -209,6 +208,7 @@ public class ScheduleController implements Initializable {
     }
 
     public void logout(MouseEvent mouseEvent) {
+
         Parent recParent = null;
         try {
             recParent = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
@@ -216,6 +216,7 @@ public class ScheduleController implements Initializable {
             e.printStackTrace();
         }
         Scene recScene = new Scene(recParent);
+
 
         //Set stage info
         Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();

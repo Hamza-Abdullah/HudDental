@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc4fb7dd-6d97-44ec-ae27-607265ecbcb8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XaAB7ivLFknLmvTLEMNl9Hikn3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Images" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\Combined\src\Login" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="MySQL" />
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\Combined\src\Images" />
+      <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\Combined\src\Login" />
+      <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\Combined\src\LeaveRequest" />
+      <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\GUI Template\src\Receptionist" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LoginMain">
+    <configuration name="LeaveRequestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeaveRequest.LeaveRequestMain" />
+      <module name="Combined" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeaveRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Login.LoginMain" />
+      <module name="Combined" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StaffSchedule.Main" />
+      <module name="Combined" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StaffSchedule.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Receptionist.Main" />
+      <module name="Combined" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Login.TestLogin" />
+      <module name="Combined" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LoginMain" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.LeaveRequestMain" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.TestLogin" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc4fb7dd-6d97-44ec-ae27-607265ecbcb8" name="Default Changelist" comment="" />
+      <created>1581273692684</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581273692684</updated>
+      <workItem from="1581273694047" duration="870000" />
+      <workItem from="1581334592562" duration="1347000" />
+      <workItem from="1581336070862" duration="3975000" />
+      <workItem from="1581350156612" duration="13355000" />
+      <workItem from="1581439155815" duration="61000" />
+      <workItem from="1581439303360" duration="182000" />
+      <workItem from="1581439816045" duration="403000" />
+      <workItem from="1581534592577" duration="12002000" />
+      <workItem from="1581676520943" duration="1574000" />
+      <workItem from="1581861079606" duration="25781000" />
+      <workItem from="1581938254925" duration="6650000" />
+      <workItem from="1581951893306" duration="1942000" />
+      <workItem from="1581954236962" duration="2252000" />
+      <workItem from="1581975662279" duration="1613000" />
+      <workItem from="1582026214198" duration="7235000" />
+      <workItem from="1582070186247" duration="4371000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="447" y="55" key="#com.intellij.ide.util.MemberChooser" timestamp="1582026962258">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="447" y="55" key="#com.intellij.ide.util.MemberChooser/0.0.1280.690@0.0.1280.690" timestamp="1582026962258" />
+    <state x="372" y="125" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1581887435566">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="372" y="125" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1280.690@0.0.1280.690" timestamp="1581887435566" />
+    <state x="372" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581887506883">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="372" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.690@0.0.1280.690" timestamp="1581887506883" />
+    <state x="438" y="230" width="404" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1581887531974">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="438" y="230" width="404" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.690@0.0.1280.690" timestamp="1581887531974" />
+    <state x="372" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582030312978">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="372" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.690@0.0.1280.690" timestamp="1582030312978" />
+    <state x="422" y="100" key="FileChooserDialogImpl" timestamp="1581952298496">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="422" y="100" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1581952298496" />
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom" timestamp="1582074572919">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
+    <state width="1237" height="148" key="GridCell.Tab.0.center" timestamp="1582074572919">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="148" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
+    <state width="1237" height="148" key="GridCell.Tab.0.left" timestamp="1582074572919">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="148" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
+    <state width="1237" height="148" key="GridCell.Tab.0.right" timestamp="1582074572919">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state width="1237" height="148" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
+    <state x="122" y="0" key="SettingsEditor" timestamp="1581955509906">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="122" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1581955509906" />
+    <state x="338" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1582070187358">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="338" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.690@0.0.1280.690" timestamp="1582070187358" />
+    <state x="298" y="154" key="run.anything.popup" timestamp="1582072060062">
+      <screen x="0" y="0" width="1280" height="690" />
+    </state>
+    <state x="298" y="154" key="run.anything.popup/0.0.1280.690@0.0.1280.690" timestamp="1582072060062" />
+  </component>
+</project>

@@ -147,7 +147,7 @@ public class MySQL {
         if (getUsers.isEmpty()) {
             return false;
         } else {
-            if ((Boolean) getUsers.get(0).get("user_isStaff")) {isStaff = true;}
+            if ((Boolean) getUsers.get(0).get("user_isStaff")) {MySQL.isStaff = true;}
             return true;
         }
     }

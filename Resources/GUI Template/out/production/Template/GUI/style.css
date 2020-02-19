@@ -1,0 +1,17 @@
+.hover_border:hover {
+    -fx-bordor-color: #0fbcf9;
+    -fx-border-width: 0px 0px 0px 4px;
+    -fx-background-color: #34e7e4e0;
+    -fx-cursor: hand;
+}
+
+.hover_top:hover {
+    -fx-bordor-color: #0fbcf9;
+    -fx-border-width: 0px 0px 0px 4px;
+    -fx-background-color: #e9e9e9;
+    -fx-cursor: hand;
+}
+
+.cursor_hand{
+    -fx-cursor: hand;
+}
