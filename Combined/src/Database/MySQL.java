@@ -169,6 +169,75 @@ public class MySQL {
         return getAllHolidaysResults;
     }
 
+    // For patient: returns all requested appointments
+    public static ArrayList<HashMap<String, Object>> getAppointments(int givenPatientID) {
+        ArrayList<HashMap<String, Object>> getAllAppointmentResults = rawQuery(
+                "SELECT * FROM appointments " +
+                        "WHERE appointment_patient = " + givenPatientID + ";"
+        );
+        return getAllAppointmentResults;
+    }
+
+    // For patient: returns the name of a treatment
+    public static String getTreatmentName(int givenTreatmentID){
+        ArrayList<HashMap<String, Object>> getAllTreatmentResults = rawQuery(
+                "SELECT * FROM treatments " +
+                        "WHERE treatment_id = " + givenTreatmentID + ";"
+        );
+        try{
+            return (String) getAllTreatmentResults.get(0).get("treatment_name");
+        }catch (NullPointerException e){
+            return "Treatment Not Found";
+        }
+    }
+
+    // For patient: returns the name of a dentist
+    public static String getDentistName(int givenDentistID){
+        ArrayList<HashMap<String, Object>> getAllDentistResults = rawQuery(
+                "SELECT * FROM dentists " +
+                        "WHERE dentist_id = " + givenDentistID + ";"
+        );
+        try{
+            return (String) getAllDentistResults.get(0).get("dentist_name");
+        }catch (NullPointerException e){
+            return "Dentist Not Found";
+        }
+    }
+
+    // For patient: returns the name of a room
+    public static String getRoomName(int givenRoomID){
+        ArrayList<HashMap<String, Object>> getAllRoomResults = rawQuery(
+                "SELECT * FROM rooms " +
+                        "WHERE room_id = " + givenRoomID + ";"
+        );
+        try{
+            return (String) getAllRoomResults.get(0).get("room_name");
+        }catch (NullPointerException e){
+            return "Room Not Found";
+        }
+    }
+
+    // For patient: returns true if checked into appointment
+    public static boolean isCheckedIn(int givenAppointmentID){
+        ArrayList<HashMap<String, Object>> getAllAppointmentResults = rawQuery(
+                "SELECT * FROM appointments " +
+                        "WHERE appointment_id = " + givenAppointmentID + ";"
+        );
+        try{
+            return ((String) getAllAppointmentResults.get(0).get("appointment_checkedin")).equals("1");
+
+        }catch (NullPointerException e){
+            return false;
+        }
+    }
+
+    // For patient: updates appointment_checkedin to 1
+    public static void checkIn(int givenAppointmentID){
+        rawQuery("UPDATE appointments " +
+                "SET appointment_checkedin = 1 " +
+                "WHERE appointment_id = " + givenAppointmentID + ";");
+    }
+
     // Manual methods
     public static ArrayList<HashMap<String,Object>> getResults(String query) {
         ArrayList<HashMap<String, Object>> results = rawQuery(query);
