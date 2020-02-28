@@ -152,7 +152,7 @@ public class BookAppointmentController implements Initializable {
             }
         }
         ArrayList<Integer> avaiableRooms = new ArrayList<Integer>();
-        for (int count = 1; count < 5; count++) {
+        for (int count = 1; count < 7; count++) {
             ArrayList<HashMap<String, Object>> getNurses = MySQL.getResults("SELECT * FROM appointments " +
                     "WHERE appointment_date = '" + formattedDate + "' " +
                     "AND appointment_room = " + count + " " +
@@ -180,8 +180,20 @@ public class BookAppointmentController implements Initializable {
         int treatmentID = (int) MySQL.getResults("SELECT * FROM treatments WHERE " +
                 "treatment_name = '" + treatment + "';").get(0).get("treatment_id");
         MySQL.newAppointment(MySQL.patientID, dentistID, nurseID, notes, formattedDate, "0", roomID, treatmentID, formattedTime);
+
+        MySQL.getTreatment(treatmentID);
+        MySQL.getPrice(Integer.parseInt(MySQL.treatmentBand));
+        MySQL.getStaffByID(dentistID);
+        String dentistName = MySQL.staffFirstName + " " + MySQL.staffSurname;
+        MySQL.getStaffByID(nurseID);
+        String nurseName = MySQL.staffFirstName + " " + MySQL.staffSurname;
         statusText.setFill(Color.web("0x00AA00",1.0));
-        statusText.setText("Status: Successfully booked appointment.");
+        statusText.setText("Status: Successfully booked treatment " + MySQL.treatmentID + " with dentist " + dentistName +
+                " and nurse " + nurseName + " on " + formattedDate + " at " + formattedTime + " in room " + roomID +
+                ". Cost: £" + MySQL.price);
+        dentistField.setValue(dentistName);
+        nurseField.setValue(nurseName);
+        roomField.setValue(roomID);
     }
 
     public void clearBtnAction(MouseEvent mouseEvent) {
@@ -212,6 +224,21 @@ public class BookAppointmentController implements Initializable {
         Parent recParent = null;
         try {
             recParent = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
+
+    public void modifyApp(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("ModifyAppointment.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
