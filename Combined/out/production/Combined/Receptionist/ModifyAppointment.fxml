@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -18,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="978.0" style="-fx-background-color: #E9E9E9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.BookAppointmentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="978.0" style="-fx-background-color: #E9E9E9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Receptionist.ModifyAppointmentController">
    <top>
       <HBox style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
          <children>
@@ -115,7 +116,7 @@
                   <String fx:value="cursor_hand" />
                </styleClass>
             </HBox>
-            <HBox alignment="CENTER_LEFT">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#bookApp">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -139,7 +140,7 @@
                   <String fx:value="cursor_hand" />
                </styleClass>
             </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="100.0" onMouseClicked="#modifyApp">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="100.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -149,7 +150,7 @@
                         <Image url="@../Images/calendar.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="modifyButton" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Modify Appointment" wrappingWidth="110.0">
+                  <Text fx:id="modifyButton" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Modify Appointment" wrappingWidth="112.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -238,12 +239,6 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="256.0" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="32.0">
                <children>
-                  <Label style="-fx-text-fill: #48546C;" text="Treatment">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="treatmentField" prefWidth="256.0" />
                   <Label style="-fx-text-fill: #48546C;" text="Phone number">
                      <font>
                         <Font size="18.0" />
@@ -256,49 +251,39 @@
                      </font>
                   </Label>
                   <DatePicker fx:id="dobField" prefWidth="256.0" />
-                  <Label style="-fx-text-fill: #48546C;" text="Date of appointment">
+                  <Label style="-fx-text-fill: #48546C;" text="Notes">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="appointmentDateField" layoutX="10.0" layoutY="142.0" prefWidth="256.0" />
+                  <TextArea fx:id="notesField" disable="true" prefHeight="71.0" prefWidth="256.0" wrapText="true" />
+                  <Label layoutX="10.0" layoutY="115.0" style="-fx-text-fill: #48546C;" text="Treatment">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="treatmentField" disable="true" prefWidth="256.0" promptText="Choose Treatment" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="256.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="32.0">
+            <VBox prefHeight="256.0" prefWidth="256.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="32.0">
                <children>
-                  <Label style="-fx-text-fill: #48546C;" text="Time (Format HH:mm)">
+                  <Label style="-fx-text-fill: #48546C;" text="Appointments">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="timeField" />
-                  <Label style="-fx-text-fill: #48546C;" text="Dentist">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="dentistField" disable="true" prefWidth="256.0" />
-                  <Label style="-fx-text-fill: #48546C;" text="Nurse">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="nurseField" disable="true" layoutX="10.0" layoutY="90.0" prefWidth="256.0" />
-                  <Label style="-fx-text-fill: #48546C;" text="Room">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="roomField" disable="true" layoutX="10.0" layoutY="142.0" prefWidth="256.0" />
-                  <Label layoutX="10.0" layoutY="167.0" style="-fx-text-fill: #48546C;" text="Notes">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="notesField" prefHeight="71.0" prefWidth="256.0" wrapText="true" />
+                  <ListView fx:id="appField" disable="true" prefHeight="192.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ListView>
+                  <Button fx:id="deleteBtn" disable="true" mnemonicParsing="false" onMouseClicked="#deleteBtnAction" prefWidth="256.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="PERMANENTLY DELETE" textFill="#aa0000" visible="false">
+                     <VBox.margin>
+                        <Insets top="16.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
-            <Text fx:id="statusText" fill="#48546c" strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Not submitted" wrappingWidth="512.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0">
+            <Text fx:id="statusText" fill="#48546c" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="512.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -309,9 +294,14 @@
    <right>
       <FlowPane prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="submitBtn" mnemonicParsing="false" onMouseClicked="#submitBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Submit">
+            <Button fx:id="getBtn" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#getBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Get">
                <FlowPane.margin>
-                  <Insets top="56.0" />
+                  <Insets right="24.0" top="56.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="updateBtn" mnemonicParsing="false" onMouseClicked="#updateBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Update">
+               <FlowPane.margin>
+                  <Insets right="24.0" top="24.0" />
                </FlowPane.margin>
             </Button>
             <Button fx:id="clearBtn" layoutX="10.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#clearBtnAction" style="-fx-border-radius: 5em; -fx-background-radius: 5em; -fx-background-color: WHITE; -fx-font-weight: bold;" text="Clear">

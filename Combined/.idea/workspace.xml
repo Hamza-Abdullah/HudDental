@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc4fb7dd-6d97-44ec-ae27-607265ecbcb8" name="Default Changelist" comment="" />
+    <list default="true" id="cc4fb7dd-6d97-44ec-ae27-607265ecbcb8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Combined/Database/MySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Combined/Database/MySQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Combined/Login/TestLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Combined/Login/TestLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Combined/Receptionist/BookAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Combined/Receptionist/BookAppointment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Combined/Receptionist/BookAppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Combined/Receptionist/BookAppointmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Combined/Receptionist/RegisterPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Combined/Receptionist/RegisterPatient.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1XaAB7ivLFknLmvTLEMNl9Hikn3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,9 +38,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -49,7 +62,7 @@
       <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\GUI Template\src\Receptionist" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LoginMain">
+  <component name="RunManager" selected="Application.LeaveRequestMain">
     <configuration name="LeaveRequestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LeaveRequest.LeaveRequestMain" />
       <module name="Combined" />
@@ -102,12 +115,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Login.TestLogin" />
+    <configuration name="PatientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Patient.PatientMain" />
       <module name="Combined" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Login.*" />
+          <option name="PATTERN" value="Patient.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LeaveRequestMain" />
+        <item itemvalue="Application.PatientMain" />
         <item itemvalue="Application.LoginMain" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.LeaveRequestMain" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.TestLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -151,6 +164,7 @@
       <workItem from="1581975662279" duration="1613000" />
       <workItem from="1582026214198" duration="7235000" />
       <workItem from="1582070186247" duration="4371000" />
+      <workItem from="1583155759310" duration="295000" />
     </task>
     <servers />
   </component>
@@ -178,34 +192,34 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="372" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.690@0.0.1280.690" timestamp="1582030312978" />
-    <state x="422" y="100" key="FileChooserDialogImpl" timestamp="1581952298496">
+    <state x="422" y="100" key="FileChooserDialogImpl" timestamp="1583156049685">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="422" y="100" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1581952298496" />
-    <state width="1237" height="148" key="GridCell.Tab.0.bottom" timestamp="1582074572919">
+    <state x="422" y="100" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1583156049685" />
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom" timestamp="1583156055471">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
-    <state width="1237" height="148" key="GridCell.Tab.0.center" timestamp="1582074572919">
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1583156055471" />
+    <state width="1237" height="148" key="GridCell.Tab.0.center" timestamp="1583156055471">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
-    <state width="1237" height="148" key="GridCell.Tab.0.left" timestamp="1582074572919">
+    <state width="1237" height="148" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1583156055471" />
+    <state width="1237" height="148" key="GridCell.Tab.0.left" timestamp="1583156055471">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
-    <state width="1237" height="148" key="GridCell.Tab.0.right" timestamp="1582074572919">
+    <state width="1237" height="148" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1583156055471" />
+    <state width="1237" height="148" key="GridCell.Tab.0.right" timestamp="1583156055471">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1582074572919" />
+    <state width="1237" height="148" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1583156055471" />
     <state x="122" y="0" key="SettingsEditor" timestamp="1581955509906">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="122" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1581955509906" />
-    <state x="338" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1582070187358">
+    <state x="338" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583157468416">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="338" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.690@0.0.1280.690" timestamp="1582070187358" />
+    <state x="338" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.690@0.0.1280.690" timestamp="1583157468416" />
     <state x="298" y="154" key="run.anything.popup" timestamp="1582072060062">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
