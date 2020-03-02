@@ -37,11 +37,11 @@ public class AppointmentGrid {
         for (HashMap appointment:appointments){
             addAppointment(
                     (int) appointment.get("appointment_id"),
-                    (String) appointment.get("appointment_date"),
-                    (String) appointment.get("appointment_time"),
-                    MySQL.getTreatmentName(Integer.parseInt((String) appointment.get("appointment_treatment"))),
-                    MySQL.getDentistName(Integer.parseInt((String) appointment.get("appointment_dentist"))),
-                    MySQL.getRoomName(Integer.parseInt((String) appointment.get("appointment_room")))
+                    appointment.get("appointment_date").toString(),
+                    appointment.get("appointment_time").toString(),
+                    MySQL.getTreatmentName((int) appointment.get("appointment_treatment")),
+                    MySQL.getDentistName((int) appointment.get("appointment_dentist")),
+                    MySQL.getRoomName((int) appointment.get("appointment_room"))
             );
         }
         return scrollPane;

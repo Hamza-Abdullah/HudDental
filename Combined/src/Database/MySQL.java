@@ -194,11 +194,11 @@ public class MySQL {
     // For patient: returns the name of a dentist
     public static String getDentistName(int givenDentistID){
         ArrayList<HashMap<String, Object>> getAllDentistResults = rawQuery(
-                "SELECT * FROM dentists " +
-                        "WHERE dentist_id = " + givenDentistID + ";"
+                "SELECT * FROM staff " +
+                        "WHERE staff_id = " + givenDentistID + ";"
         );
         try{
-            return (String) getAllDentistResults.get(0).get("dentist_name");
+            return (String) getAllDentistResults.get(0).get("staff_firstname");
         }catch (NullPointerException e){
             return "Dentist Not Found";
         }

@@ -31,7 +31,7 @@ public class PatientMain extends Application {
         primaryStage.show();
 
         // 0 will be replaced with patient id via log in
-        appointmentPage = new AppointmentGrid(this, 0);
+        appointmentPage = new AppointmentGrid(this, 5004);
         getAppointmentsPage();
     }
 
