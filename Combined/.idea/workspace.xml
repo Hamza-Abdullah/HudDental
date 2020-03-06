@@ -3,10 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="cc4fb7dd-6d97-44ec-ae27-607265ecbcb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/MySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/TestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Patient/AppointmentGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Patient/AppointmentGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Patient/PatientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Patient/PatientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Countdown$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Countdown.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/DateExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Example2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Reminder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/ReminderExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/ReminderTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Scheduled$RemindTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Scheduled.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Reminder/out/production/Reminder/Timer.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Resources/Reminder" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -60,7 +67,7 @@
       <recent name="C:\Users\Hamza\OneDrive - University of Huddersfield\Year 2\Team Project\HudDental-master\GUI Template\src\Receptionist" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PatientMain">
+  <component name="RunManager" selected="Application.LoginMain">
     <configuration name="LeaveRequestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LeaveRequest.LeaveRequestMain" />
       <module name="Combined" />
@@ -128,8 +135,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PatientMain" />
         <item itemvalue="Application.LoginMain" />
+        <item itemvalue="Application.PatientMain" />
         <item itemvalue="Application.TestLogin" />
         <item itemvalue="Application.LeaveRequestMain" />
         <item itemvalue="Application.Main" />
@@ -166,6 +173,7 @@
       <workItem from="1583157468756" duration="839000" />
       <workItem from="1583158600472" duration="792000" />
       <workItem from="1583163758524" duration="1263000" />
+      <workItem from="1583165158472" duration="1508000" />
     </task>
     <servers />
   </component>
@@ -193,34 +201,34 @@
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="372" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.690@0.0.1280.690" timestamp="1582030312978" />
-    <state x="422" y="100" key="FileChooserDialogImpl" timestamp="1583156049685">
+    <state x="422" y="100" key="FileChooserDialogImpl" timestamp="1583165460661">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="422" y="100" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1583156049685" />
-    <state width="1237" height="148" key="GridCell.Tab.0.bottom" timestamp="1583165023397">
+    <state x="422" y="100" key="FileChooserDialogImpl/0.0.1280.690@0.0.1280.690" timestamp="1583165460661" />
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom" timestamp="1583168222453">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1583165023397" />
-    <state width="1237" height="148" key="GridCell.Tab.0.center" timestamp="1583165023396">
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1583168222453" />
+    <state width="1237" height="148" key="GridCell.Tab.0.center" timestamp="1583168222451">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1583165023396" />
-    <state width="1237" height="148" key="GridCell.Tab.0.left" timestamp="1583165023396">
+    <state width="1237" height="148" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1583168222451" />
+    <state width="1237" height="148" key="GridCell.Tab.0.left" timestamp="1583168222449">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1583165023396" />
-    <state width="1237" height="148" key="GridCell.Tab.0.right" timestamp="1583165023397">
+    <state width="1237" height="148" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1583168222449" />
+    <state width="1237" height="148" key="GridCell.Tab.0.right" timestamp="1583168222451">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1583165023397" />
+    <state width="1237" height="148" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1583168222451" />
     <state x="122" y="0" key="SettingsEditor" timestamp="1581955509906">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
     <state x="122" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1581955509906" />
-    <state x="338" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583163770006">
+    <state x="338" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1583165158334">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
-    <state x="338" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.690@0.0.1280.690" timestamp="1583163770006" />
+    <state x="338" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.690@0.0.1280.690" timestamp="1583165158334" />
     <state x="298" y="154" key="run.anything.popup" timestamp="1582072060062">
       <screen x="0" y="0" width="1280" height="690" />
     </state>
