@@ -238,6 +238,12 @@ public class MySQL {
                 "WHERE appointment_id = " + givenAppointmentID + ";");
     }
 
+    // For patient: removes appointment from table
+    public static void cancelAppointment(int givenAppointmentID){
+        rawQuery("DELETE FROM appointments " +
+                "WHERE appointment_id = " + givenAppointmentID + ";");
+    }
+
     // Manual methods
     public static ArrayList<HashMap<String,Object>> getResults(String query) {
         ArrayList<HashMap<String, Object>> results = rawQuery(query);

@@ -17,9 +17,12 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 
 class AppointmentBox extends VBox {
+    private FlowPane flowPane;
 
     AppointmentBox(int appointmentID, String date, String time, String appointment, String dentist, String room, FlowPane flowPane, Stage primaryStage) {
         super();
+        this.flowPane = flowPane;
+
         setStyle("-fx-background-color: #0FBCF9");
         setPadding(new Insets(40, 40, 40, 40));
         setSpacing(10);
@@ -76,7 +79,20 @@ class AppointmentBox extends VBox {
             }
         });
 
-        hBox.getChildren().addAll(checkInButton, changeButton);
+        //cancel button
+        Button cancelButton = new Button("Cancel");
+        cancelButton.setFont(buttonFont);
+        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                CancelDialog dialog = new CancelDialog(AppointmentBox.this, appointmentID);
+                dialog.initModality(Modality.APPLICATION_MODAL);
+                dialog.initOwner(primaryStage);
+                dialog.show();
+            }
+        });
+
+        hBox.getChildren().addAll(checkInButton, changeButton, cancelButton);
     }
     
     private void setLabelFont(Label label){
@@ -92,5 +108,9 @@ class AppointmentBox extends VBox {
                 Integer.parseInt(digits[2])
         );
         return newDate;
+    }
+
+    public void removeAppointment(){
+        flowPane.getChildren().remove(this);
     }
 }

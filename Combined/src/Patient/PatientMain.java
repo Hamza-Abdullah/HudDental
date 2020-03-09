@@ -30,7 +30,7 @@ public class PatientMain extends Application {
         primaryStage.setScene(new Scene(root, 1078, 605));
         primaryStage.show();
 
-        // 0 will be replaced with patient id via log in
+        // 5004 will be replaced with patient id via log in
         appointmentPage = new AppointmentGrid(this, 5004);
         getAppointmentsPage();
     }

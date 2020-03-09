@@ -17,24 +17,13 @@ import javafx.stage.Stage;
 public class ChangeRequestDialog extends Stage {
 
     public ChangeRequestDialog() {
-        Label title = new Label("Change Request:");
-        title.setFont(new Font("Arial Black", 20));
-        title.setTextFill(Color.rgb(128, 206, 225));
+        Label line1 = new Label("To rebook an appointment call us on 01484 535723");
+        Label line2 = new Label("or come down and speak to us at the clinic");
+        line1.setFont(new Font("Quicksand", 15));
+        line2.setFont(new Font("Quicksand", 15));
 
-        TextArea textArea = new TextArea();
-        textArea.setWrapText(true);
-
-        Button sendButton = new Button("Send Change Request");
-        sendButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                //update database - send change request
-                ChangeRequestDialog.this.close();
-            }
-        });
-
-        Button cancelButton = new Button("Cancel");
-        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+        Button closeButton = new Button("Close");
+        closeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 ChangeRequestDialog.this.close();
@@ -43,17 +32,11 @@ public class ChangeRequestDialog extends Stage {
 
         VBox vBox = new VBox();
         vBox.setPadding(new Insets(10, 10, 10, 10));
-        vBox.setSpacing(10);
-        vBox.setFillWidth(true);
+        vBox.setAlignment(Pos.CENTER);
+        VBox.setMargin(closeButton, new Insets(10, 0, 0, 0));
+        vBox.getChildren().addAll(line1, line2, closeButton);
 
-        HBox hBox = new HBox();
-        hBox.setAlignment(Pos.CENTER);
-        hBox.setSpacing(20);
-
-        hBox.getChildren().addAll(sendButton, cancelButton);
-        vBox.getChildren().addAll(title, textArea, hBox);
-
-        Scene dialog = new Scene(vBox, 500, 200);
+        Scene dialog = new Scene(vBox);
         setScene(dialog);
     }
 }
