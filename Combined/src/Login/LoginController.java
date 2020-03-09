@@ -35,7 +35,7 @@ public class LoginController implements Initializable {
     public PasswordField passwordField;
     public Label errorLabel;
 
-    public static int staffID;
+    public static int staffID, patientID;
     public ImageView loader;
 
     private void setupLoginButton(){
@@ -73,6 +73,7 @@ public class LoginController implements Initializable {
                     //load staff UI
                     MySQL.getStaff(phoneNum);
                     LoginController.staffID = MySQL.staffID;
+                    LoginController.patientID = -1;
                     if (MySQL.staffRole.equals("Receptionist")) {
                         Parent recParent = null;
                         try {
@@ -106,6 +107,9 @@ public class LoginController implements Initializable {
                 else {
                     System.out.println("patient");
                     //load patient ui
+                    MySQL.getPatientByPhone(phoneNum);
+                    LoginController.patientID = MySQL.patientID;
+                    LoginController.staffID = -1;
                 }
             }
         });
