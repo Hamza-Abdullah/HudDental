@@ -1,5 +1,6 @@
 package Patient;
 
+import Login.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,7 +32,7 @@ public class PatientMain extends Application {
         primaryStage.show();
 
         // 5004 will be replaced with patient id via log in
-        appointmentPage = new AppointmentGrid(this, 5004);
+        appointmentPage = new AppointmentGrid(this, LoginController.patientID);
         getAppointmentsPage();
     }
 
