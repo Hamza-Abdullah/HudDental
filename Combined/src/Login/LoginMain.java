@@ -9,8 +9,12 @@ import javafx.stage.Stage;
 
 public class LoginMain extends Application {
 
+    // For patient
+    public static Stage primaryStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        this.primaryStage = primaryStage;
 //        FXMLLoader loader = new FXMLLoader();
 //        loader.setLocation(getClass().getResource("Login.fxml"));
 //        LoginController controller = new LoginController();
@@ -29,6 +33,10 @@ public class LoginMain extends Application {
         primaryStage.show();
     }
 
+    // For patient
+    public static Stage getPrimaryStage(){
+        return primaryStage;
+    }
 
     public static void main(String[] args) {
         launch(args);

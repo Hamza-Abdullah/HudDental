@@ -1,6 +1,7 @@
 package Login;
 
 import Database.MySQL;
+import Patient.PatientController;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -37,6 +39,8 @@ public class LoginController implements Initializable {
 
     public static int staffID, patientID;
     public ImageView loader;
+
+    public static VBox mainVBox = new VBox();
 
     private void setupLoginButton(){
         logInButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -105,11 +109,28 @@ public class LoginController implements Initializable {
 
                 }
                 else {
-                    System.out.println("patient");
                     //load patient ui
                     MySQL.getPatientByPhone(phoneNum);
                     LoginController.patientID = MySQL.patientID;
                     LoginController.staffID = -1;
+
+                    // LOAD
+                    Stage primaryStage = LoginMain.primaryStage;
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("../Patient/PatientAppointmentGUI.fxml"));
+                    PatientController patientController = new PatientController();
+                    loader.setController(patientController);
+                    Parent root = null;
+                    try {
+                        root = loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    patientController.addVBox(mainVBox);
+
+                    primaryStage.setTitle("HudDental - Dental Management System");
+                    primaryStage.setScene(new Scene(root, 1078, 605));
+                    primaryStage.show();
                 }
             }
         });

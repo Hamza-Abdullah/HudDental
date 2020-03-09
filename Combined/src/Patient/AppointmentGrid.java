@@ -1,22 +1,24 @@
 package Patient;
 
 import Database.MySQL;
+import Login.LoginMain;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AppointmentGrid {
-    private PatientMain main;
+
     private FlowPane flowPane;
     private ScrollPane scrollPane;
     private int patientID;
 
-    public AppointmentGrid(PatientMain main, int patientID) {
-        this.main = main;
+    public AppointmentGrid(int patientID) {
         this.patientID = patientID;
 
         flowPane = new FlowPane();
@@ -45,9 +47,8 @@ public class AppointmentGrid {
         return scrollPane;
     }
 
-
     private void addAppointment(int appointmentID, String date, String time, String appointment, String dentist, String room) {
         flowPane.getChildren().add(
-                new AppointmentBox(appointmentID, date, time, appointment, dentist, room, flowPane, main.getPrimaryStage()));
+                new AppointmentBox(appointmentID, date, time, appointment, dentist, room, flowPane, LoginMain.getPrimaryStage()));
     }
 }
