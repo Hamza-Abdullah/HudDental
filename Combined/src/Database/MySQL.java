@@ -61,6 +61,48 @@ public class MySQL {
         MySQL.patientAddressID = (int) patient.get("patient_address");
     }
 
+    // To get a sing patient's details
+    public static void getPatientByID(int givenID) {
+        ArrayList<HashMap<String, Object>> patientResults = rawQuery(
+                "SELECT * FROM patients " +
+                        "WHERE patient_id = " + givenID + ";"
+        );
+
+        if (patientResults.size() == 0) {
+            MySQL.patientID = -1;
+            return;
+        }
+
+        HashMap patient = patientResults.get(0);
+        MySQL.patientID = (int) patient.get("patient_id");
+        MySQL.patientFirstName = patient.get("patient_firstname").toString();
+        MySQL.patientSurname = patient.get("patient_surname").toString();
+        MySQL.patientDOB = patient.get("patient_dob").toString();
+        MySQL.patientPhone = patient.get("patient_phone").toString();
+        MySQL.patientAddressID = (int) patient.get("patient_address");
+    }
+
+    // To get a sing patient's details
+    public static void getPatientByPhone(String givenPhone) {
+        ArrayList<HashMap<String, Object>> patientResults = rawQuery(
+                "SELECT * FROM patients " +
+                        "WHERE patient_phone = " + givenPhone + ";"
+        );
+
+        if (patientResults.size() == 0) {
+            MySQL.patientID = -1;
+            return;
+        }
+
+        HashMap patient = patientResults.get(0);
+        MySQL.patientID = (int) patient.get("patient_id");
+        MySQL.patientFirstName = patient.get("patient_firstname").toString();
+        MySQL.patientSurname = patient.get("patient_surname").toString();
+        MySQL.patientDOB = patient.get("patient_dob").toString();
+        MySQL.patientPhone = patient.get("patient_phone").toString();
+        MySQL.patientAddressID = (int) patient.get("patient_address");
+    }
+
     // To get a single staff's details by phone number
     public static int staffID, staffAddressID;
     public static String staffFirstName, staffSurname, staffRole, staffPhone;

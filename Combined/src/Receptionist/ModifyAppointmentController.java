@@ -235,4 +235,19 @@ public class ModifyAppointmentController implements Initializable {
         statusText.setFill(Color.web("0xAA0000",1.0));
         statusText.setText("Status: Permanently deleted appointment.");
     }
+
+    public void profile(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../Profile/Profile.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
 }
