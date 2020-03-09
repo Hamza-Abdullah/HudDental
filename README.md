@@ -4,11 +4,14 @@ The combined application is under the "Combined" folder. Download this so you ca
 Look under the "Resources" folder for stuff like the blank GUI template that we're all using, or the MySQL examples.
 
 ## Features that currently work:
-* Staff can login
-* Dentists and nurses can view their schedule
-* Receptionists can make bookings and register new patients
-* Receptionists can view/modify a patient's existing appointments
-* Patient's can view their booked appointments
+* Staff can login (Chris and Hamza)
+* Patients can login (Chris and Hamza)
+* Dentists and nurses can view their schedule with relevant details (Danyal)
+* Receptionists can make bookings and register new patients (Hamza)
+* Receptionists can view/modify a patient's existing appointments (Hamza)
+* Patient's can check in, view, and cancel their booked appointments (Chris)
+* A user can view/edit their details (Hamza)
+* A manager can view statistics, and approve or deny holiday requests (Danyal)
 
 See the data in the database to help with your testing at:
 http://hamza-abdullah.herokuapp.com/
