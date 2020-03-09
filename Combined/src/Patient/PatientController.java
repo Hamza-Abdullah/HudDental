@@ -27,8 +27,15 @@ public class PatientController {
 
     private void showNotifications(){
         NotificationDialog dialog = new NotificationDialog();
+        addTestData(dialog);
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.initOwner(notificationImage.getScene().getWindow());
         dialog.show();
+    }
+
+    private void addTestData(NotificationDialog dialog){
+        for (int i = 0; i < 7; i++){
+            dialog.addNotification(new NotificationBox("Notification " + i, "Time " + i));
+        }
     }
 }
