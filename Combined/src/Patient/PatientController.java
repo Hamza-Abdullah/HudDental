@@ -2,7 +2,6 @@ package Patient;
 
 import Database.MySQL;
 import Login.LoginController;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -22,7 +20,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.cert.PolicyNode;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class PatientController implements Initializable {
@@ -67,15 +67,27 @@ public class PatientController implements Initializable {
 
     private void showNotifications(){
         NotificationDialog dialog = new NotificationDialog();
-        addTestData(dialog);
+        //addTestData(dialog);
+        getNotifications(dialog);
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.initOwner(notificationImage.getScene().getWindow());
         dialog.show();
     }
 
     private void addTestData(NotificationDialog dialog){
+        dialog.addNotification("This is a really long description string and I mean really long", "Yesterday");
         for (int i = 0; i < 7; i++){
-            dialog.addNotification(new NotificationBox("Notification " + i, "Time " + i));
+            dialog.addNotification("Notification " + i, "Time " + i);
+        }
+    }
+
+    private void getNotifications(NotificationDialog dialog){
+        ArrayList<HashMap<String, Object>> notifications = MySQL.getPatientNotifications(MySQL.patientID);
+
+        for (HashMap<String, Object> notification : notifications){
+            dialog.addNotification(
+                    (String) notification.get("notification_description"),
+                    notification.get("notification_dateTime").toString());
         }
     }
 

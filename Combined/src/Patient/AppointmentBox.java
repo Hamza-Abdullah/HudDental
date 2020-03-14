@@ -19,7 +19,7 @@ import java.time.LocalDate;
 class AppointmentBox extends VBox {
     private FlowPane flowPane;
 
-    AppointmentBox(int appointmentID, String date, String time, String appointment, String dentist, String room, FlowPane flowPane, Stage primaryStage) {
+    AppointmentBox(int appointmentID, String date, String time, String appointment, String dentist, int room, FlowPane flowPane, Stage primaryStage) {
         super();
         this.flowPane = flowPane;
 
@@ -28,19 +28,19 @@ class AppointmentBox extends VBox {
         setSpacing(10);
         setMaxWidth(USE_COMPUTED_SIZE);
         
-        Label dateLabel = new Label(date);
+        Label dateLabel = new Label("Date: " + date);
         setLabelFont(dateLabel);
 
-        Label timeLabel = new Label(time);
+        Label timeLabel = new Label("Time: " + time);
         setLabelFont(timeLabel);
 
         Label appointmentLabel = new Label(appointment);
         setLabelFont(appointmentLabel);
 
-        Label dentistLabel = new Label(dentist);
+        Label dentistLabel = new Label("Dentist: " + dentist);
         setLabelFont(dentistLabel);
 
-        Label roomLabel = new Label(room);
+        Label roomLabel = new Label("Room: " + room);
         setLabelFont(roomLabel);
 
         getChildren().addAll(dateLabel, timeLabel, appointmentLabel, dentistLabel, roomLabel);

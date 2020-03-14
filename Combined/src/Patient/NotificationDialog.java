@@ -21,10 +21,12 @@ public class NotificationDialog extends Stage {
 
         notificationVBox = new VBox();
         notificationVBox.setSpacing(5);
+        notificationVBox.setPadding(new Insets(5, 5, 5, 5));
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(notificationVBox);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scrollPane.setMinHeight(250);
 
         VBox containerVBox = new VBox();
         containerVBox.setAlignment(Pos.TOP_CENTER);
@@ -36,7 +38,7 @@ public class NotificationDialog extends Stage {
         setScene(dialog);
     }
 
-    public void addNotification(NotificationBox notification){
-        notificationVBox.getChildren().add(notification);
+    public void addNotification(String description, String timeCreated){
+        notificationVBox.getChildren().add(new NotificationBox(description, timeCreated));
     }
 }

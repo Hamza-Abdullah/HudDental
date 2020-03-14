@@ -240,7 +240,9 @@ public class MySQL {
                         "WHERE staff_id = " + givenDentistID + ";"
         );
         try{
-            return (String) getAllDentistResults.get(0).get("staff_firstname");
+            String nameString = ((String) getAllDentistResults.get(0).get("staff_firstname")) + " " +
+                    ((String) getAllDentistResults.get(0).get("staff_surname"));
+            return nameString;
         }catch (NullPointerException e){
             return "Dentist Not Found";
         }
@@ -284,6 +286,24 @@ public class MySQL {
     public static void cancelAppointment(int givenAppointmentID){
         rawQuery("DELETE FROM appointments " +
                 "WHERE appointment_id = " + givenAppointmentID + ";");
+    }
+
+    // For patient: returns a single patients notifications
+    public static ArrayList<HashMap<String, Object>> getPatientNotifications(int givenPatientID){
+        ArrayList<HashMap<String, Object>> getAllNotificationResults = rawQuery(
+                "SELECT * FROM notifications " +
+                        "WHERE notification_patient = " + givenPatientID + ";"
+        );
+        return getAllNotificationResults;
+    }
+
+    //For patient: creates an appointment booked notification for a patient
+    public static void createBookingNotification(int patientID, String description, String dateTime){
+        rawQuery(
+                "INSERT INTO notifications " +
+                        "(notification_patient, notification_description, notification_dateTime) " +
+                        "VALUES ('" + patientID + "', '" + description + "', '" + dateTime + "');"
+        );
     }
 
     // Manual methods

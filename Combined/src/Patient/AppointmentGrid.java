@@ -41,13 +41,13 @@ public class AppointmentGrid {
                     appointment.get("appointment_time").toString(),
                     MySQL.getTreatmentName((int) appointment.get("appointment_treatment")),
                     MySQL.getDentistName((int) appointment.get("appointment_dentist")),
-                    MySQL.getRoomName((int) appointment.get("appointment_room"))
+                    (int) appointment.get("appointment_room")
             );
         }
         return scrollPane;
     }
 
-    private void addAppointment(int appointmentID, String date, String time, String appointment, String dentist, String room) {
+    private void addAppointment(int appointmentID, String date, String time, String appointment, String dentist, int room) {
         flowPane.getChildren().add(
                 new AppointmentBox(appointmentID, date, time, appointment, dentist, room, flowPane, LoginMain.getPrimaryStage()));
     }

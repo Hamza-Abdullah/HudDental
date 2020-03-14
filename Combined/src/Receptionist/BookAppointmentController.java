@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -180,6 +181,7 @@ public class BookAppointmentController implements Initializable {
         int treatmentID = (int) MySQL.getResults("SELECT * FROM treatments WHERE " +
                 "treatment_name = '" + treatment + "';").get(0).get("treatment_id");
         MySQL.newAppointment(MySQL.patientID, dentistID, nurseID, notes, formattedDate, "0", roomID, treatmentID, formattedTime);
+        MySQL.createBookingNotification(MySQL.patientID, "Your " + treatment + "appointment has been booked for " + formattedDate + " at " + time, getDateTime());
 
         MySQL.getTreatment(treatmentID);
         MySQL.getPrice(Integer.parseInt(MySQL.treatmentBand));
@@ -263,5 +265,10 @@ public class BookAppointmentController implements Initializable {
         Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         window.setScene(recScene);
         window.show();
+    }
+
+    private String getDateTime(){
+        String timeString = LocalDateTime.now().toString();
+        return timeString.replace('T', ' ').substring(0, timeString.indexOf('.'));
     }
 }
