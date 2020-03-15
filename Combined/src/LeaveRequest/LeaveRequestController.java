@@ -1,38 +1,97 @@
-package LeaveRequest;
+package GUI;
 
+import Database.MySQL;
+import com.calendarfx.model.Calendar;
+import com.calendarfx.model.CalendarSource;
+import com.calendarfx.model.Entry;
+import com.calendarfx.view.DetailedDayView;
+import com.calendarfx.view.DetailedWeekView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
-import java.time.LocalDate;
+import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.Time;
+import java.time.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.ResourceBundle;
 
-public class LeaveRequestController {
-    private int staffNum;
+/**
+ * Controller for staff leave request form
+ *
+ * @author Mohammad Danyal
+ * @version February 2020
+ */
 
-    @FXML
-    DatePicker startDate;
-    @FXML
-    DatePicker endDate;
-    @FXML
-    ComboBox comboBox;
-    @FXML
-    TextArea textArea;
-    @FXML
-    Button submit;
-    @FXML
-    Text error;
+public class LeaveRequestController implements Initializable {
 
-    public LeaveRequestController(int staffNum){
-        this.staffNum = staffNum;
-    }
 
-    public void setupUI(){
+    public Button btnSubmit;
+    public ComboBox reason;
+    public DatePicker dateStart;
+    public DatePicker dateEnd;
+    public TextArea notes;
+    public int staffID = 4;
+    //public int staffID = LoginController.staffID;
+
+    MySQL results = new MySQL();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         setupDatePickers();
         setupComboBox();
-        setupButton();
+    }
+
+    public void comboAction(ActionEvent event) {
+
+        if ((reason.getSelectionModel().getSelectedItem().equals("Other")) && (!(dateStart.getValue() ==null)) && (!(dateEnd.getValue() ==null))) {
+            notes.setVisible(true);
+
+        } else if (((!(reason.getSelectionModel().getSelectedItem().equals("Other")) )&& (reason.getSelectionModel().isEmpty()==false))  && (!(dateStart.getValue() ==null)) && (!(dateEnd.getValue() ==null))) {
+            notes.setVisible(false);
+            btnSubmit.setDisable(false);
+        }
+    }
+
+    @FXML
+    public void handleButtonAction(MouseEvent event) {
+        System.out.println(event.getTarget());
+
+        if (event.getTarget() == btnSubmit) {
+
+            if ( dateStart.getValue() == null ) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "No start date selected", ButtonType.OK);
+                alert.showAndWait();
+            } else if (dateEnd.getValue() == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "No end date selected", ButtonType.OK);
+                alert.showAndWait();
+            } else if (reason.getSelectionModel().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "No reason selected", ButtonType.OK);
+                alert.showAndWait();
+            } else {
+
+                LocalDate localStart = dateStart.getValue();
+                LocalDate localEnd = dateEnd.getValue();
+
+                Date start = Date.valueOf(localStart);
+                Date end = Date.valueOf(localEnd);
+
+
+                    MySQL.makeLeaveRequest(start, end, staffID, reason.getSelectionModel().getSelectedIndex());
+
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Leave Requested", ButtonType.OK);
+                    alert.showAndWait();
+
+            }
+        }
     }
 
     public void restrictDatePicker(DatePicker datePicker, LocalDate minDate) {
@@ -55,26 +114,26 @@ public class LeaveRequestController {
     }
 
     private void setupDatePickers(){
-        restrictDatePicker(startDate, LocalDate.now());
-        restrictDatePicker(endDate, LocalDate.now());
+        restrictDatePicker(dateStart, LocalDate.now());
+        restrictDatePicker(dateEnd, LocalDate.now());
 
-        startDate.setOnAction(new EventHandler<ActionEvent>() {
+        dateStart.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 try{
-                    if (startDate.getValue().isAfter(endDate.getValue())){
-                        endDate.setValue(null);
+                    if (dateStart.getValue().isAfter(dateEnd.getValue())){
+                        dateEnd.setValue(null);
                     }
                 }catch (NullPointerException e){}
             }
         });
 
-        endDate.setOnAction(new EventHandler<ActionEvent>() {
+        dateEnd.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 try {
-                    if (endDate.getValue().isBefore(startDate.getValue())){
-                        startDate.setValue(null);
+                    if (dateEnd.getValue().isBefore(dateStart.getValue())){
+                        dateStart.setValue(null);
                     }
                 } catch (NullPointerException e) { }
             }
@@ -82,34 +141,14 @@ public class LeaveRequestController {
     }
 
     private void setupComboBox(){
-        comboBox.getItems().add("Doctors appointment or other health related reason");
-        comboBox.getItems().add("Childcare or other other caring responsibility");
-        comboBox.getItems().add("Family emergency");
-        comboBox.getItems().add("Holiday");
-        comboBox.getItems().add("Other");
+
+        ArrayList<HashMap<String,Object>> allResults =
+                results.getResults("SELECT * FROM holidayReasons;");
+
+        for (int i=0; i<allResults.size(); i++) {
+            MySQL.getReasonName(i);
+            reason.getItems().add(MySQL.reasonName);
+        }
     }
 
-    private void setupButton(){
-        submit.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (startDate.getValue() == null || endDate.getValue() == null || comboBox.getValue() == null || textArea.getText().trim().equals("")){
-                    error.setText("All boxes must be filled to submit");
-                }
-                else{
-                    String start = startDate.getValue().toString();
-                    String end = endDate.getValue().toString();
-
-                    LeaveRequestSQL.makeLeaveRequest(start, end, staffNum);
-                    //Currently no way of storing reasons for leave
-
-                    startDate.setValue(null);
-                    endDate.setValue(null);
-                    comboBox.getSelectionModel().clearSelection();
-                    textArea.setText("");
-                    error.setText("");
-                }
-            }
-        });
-    }
 }
