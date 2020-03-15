@@ -88,10 +88,10 @@ public class LoginController implements Initializable {
 
                         Scene recScene = new Scene(recParent, width, height);
                         //Set stage info
-                        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window.setScene(recScene);
                         window.show();
-                    } else if(MySQL.staffRole.equals("Dentist") | MySQL.staffRole.equals("Nurse")) {
+                    } else if (MySQL.staffRole.equals("Dentist") | MySQL.staffRole.equals("Nurse")) {
                         Parent staffParent = null;
                         try {
                             staffParent = FXMLLoader.load(getClass().getResource("../StaffSchedule/GUI.fxml"));
@@ -100,7 +100,19 @@ public class LoginController implements Initializable {
                         }
                         Scene recScene = new Scene(staffParent, width, height);
                         //Set stage info
-                        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+                        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        window.setScene(recScene);
+                        window.show();
+                    } else if(MySQL.staffRole.equals("Manager")) {
+                        Parent staffParent = null;
+                        try {
+                            staffParent = FXMLLoader.load(getClass().getResource("../Manager/Dashboard.fxml"));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        Scene recScene = new Scene(staffParent, width, height);
+                        //Set stage info
+                        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window.setScene(recScene);
                         window.show();
                     } else {

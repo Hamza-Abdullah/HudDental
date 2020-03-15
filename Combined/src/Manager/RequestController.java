@@ -1,4 +1,4 @@
-package GUI;
+package Manager;
 
 import Database.MySQL;
 import javafx.beans.Observable;
@@ -46,7 +46,7 @@ public class RequestController implements Initializable {
     public ListView listRequests;
     public Button btnApprove;
     public Button btnDeny;
-
+    public Text staffName;
     public HBox btnDashboard;
 
     ObservableList list= FXCollections.observableArrayList();
@@ -56,6 +56,9 @@ public class RequestController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        MySQL.getStaffByID(16);
+        staffName.setText(MySQL.staffFirstName + " " + MySQL.staffSurname);
 
         retrieveRequests();
 
@@ -84,7 +87,7 @@ public class RequestController implements Initializable {
 
     private void retrieveRequests() {
 
-        ArrayList<HashMap<String,Object>> requests = results.getResults("SELECT *" +
+        ArrayList<HashMap<String,Object>> requests = results.getResults("SELECT * " +
                 "FROM holidays WHERE holiday_approved = 0 ORDER BY holiday_start ASC");
 
         int numberOfEntries = (int) requests.size();
@@ -144,7 +147,36 @@ public class RequestController implements Initializable {
         }
     }
 
+    public void profile(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../Profile/Profile.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
+
+    public void logout(MouseEvent mouseEvent) {
+
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
 
 
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
 }
 

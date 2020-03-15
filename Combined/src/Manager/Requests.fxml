@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="978.0" style="-fx-background-color: #E9E9E9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.RequestController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="978.0" style="-fx-background-color: #E9E9E9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager.RequestController">
    <top>
       <HBox style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
          <children>
@@ -68,7 +68,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-fill: #48546C;" text="Joe Bloggs" />
+                        <Text fx:id="staffName" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-fill: #48546C;" text="Joe Bloggs" />
                      </children>
                      <HBox.margin>
                         <Insets right="15.0" />
@@ -136,7 +136,7 @@
             </HBox>
             <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_LEFT">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#profile">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -146,7 +146,7 @@
                               <Image url="@../Images/settings.png" />
                            </image>
                         </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Settings">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #48546C;" text="Edit Profile">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -157,7 +157,7 @@
                         <String fx:value="cursor_hand" />
                      </styleClass>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#logout">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -206,8 +206,8 @@
          <center>
             <VBox alignment="CENTER" prefHeight="531.0" prefWidth="99.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnApprove" mnemonicParsing="false" onAction="#approve" text="Approve" />
-                  <Button fx:id="btnDeny" layoutX="44.0" layoutY="263.0" mnemonicParsing="false" onAction="#deny" prefWidth="61.6" text="Deny">
+                  <Button fx:id="btnApprove" mnemonicParsing="false" onAction="#approve" style="-fx-background-color: #fff; -fx-font-weight: bold; -fx-background-radius: 5em;" text="Approve" />
+                  <Button fx:id="btnDeny" layoutX="44.0" layoutY="263.0" mnemonicParsing="false" onAction="#deny" prefWidth="61.6" style="-fx-background-color: #fff; -fx-font-weight: bold; -fx-background-radius: 5em;" text="Deny">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>

@@ -49,10 +49,13 @@ class AppointmentBox extends VBox {
         getChildren().add(hBox);
 
         Font buttonFont = new Font("Arial Black", 15);
+        String buttonStyle = "-fx-background-color: #fff; -fx-background-radius: 5em";
+
 
         //check in button
         Button checkInButton = new Button("Check In");
         checkInButton.setFont(buttonFont);
+        checkInButton.setStyle(buttonStyle);
 
         if (!LocalDate.now().isEqual(parseDate(date)) || MySQL.isCheckedIn(appointmentID)){
             checkInButton.setDisable(true);
@@ -69,6 +72,7 @@ class AppointmentBox extends VBox {
         //change button
         Button changeButton = new Button("Request Change");
         changeButton.setFont(buttonFont);
+        changeButton.setStyle(buttonStyle);
         changeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -82,6 +86,7 @@ class AppointmentBox extends VBox {
         //cancel button
         Button cancelButton = new Button("Cancel");
         cancelButton.setFont(buttonFont);
+        cancelButton.setStyle(buttonStyle);
         cancelButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -93,6 +98,8 @@ class AppointmentBox extends VBox {
         });
 
         hBox.getChildren().addAll(checkInButton, changeButton, cancelButton);
+        hBox.setMargin(checkInButton, new Insets(0, 10, 0, 0));
+        hBox.setMargin(changeButton, new Insets(0, 10, 0, 0));
     }
     
     private void setLabelFont(Label label){

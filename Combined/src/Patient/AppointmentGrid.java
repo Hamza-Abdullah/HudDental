@@ -9,8 +9,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 public class AppointmentGrid {
 
@@ -38,7 +40,7 @@ public class AppointmentGrid {
             addAppointment(
                     (int) appointment.get("appointment_id"),
                     appointment.get("appointment_date").toString(),
-                    appointment.get("appointment_time").toString(),
+                    LocalTime.parse(appointment.get("appointment_time").toString()).minusHours(1).toString(),
                     MySQL.getTreatmentName((int) appointment.get("appointment_treatment")),
                     MySQL.getDentistName((int) appointment.get("appointment_dentist")),
                     (int) appointment.get("appointment_room")

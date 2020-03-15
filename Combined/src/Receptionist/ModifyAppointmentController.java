@@ -215,8 +215,9 @@ public class ModifyAppointmentController implements Initializable {
         for (int count = 0; count < appointments.size(); count++) {
             treatmentID = (int) appointments.get(count).get("appointment_treatment");
             MySQL.getTreatment(treatmentID);
+            String time = LocalTime.parse(appointments.get(count).get("appointment_time").toString()).minusHours(1).toString();
             String item = appointments.get(count).get("appointment_id") + ". Date: " + appointments.get(count).get("appointment_date") +
-                    ", Time: " + appointments.get(count).get("appointment_time") + ", Treatment: " + MySQL.treatmentName;
+                    ", Time: " + time + ", Treatment: " + MySQL.treatmentName;
             appField.getItems().add(item);
             appointmentList.add(appointments.get(count).get("appointment_id").toString());
         }
@@ -240,6 +241,21 @@ public class ModifyAppointmentController implements Initializable {
         Parent recParent = null;
         try {
             recParent = FXMLLoader.load(getClass().getResource("../Profile/Profile.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
+
+    public void requestLeave(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../LeaveRequest/LeaveRequest.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

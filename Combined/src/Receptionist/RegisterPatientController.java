@@ -114,6 +114,8 @@ public class RegisterPatientController implements Initializable {
         if (patients.isEmpty()) {
             MySQL.newPatient(firstName, surname, formattedDate, phone, MySQL.addressID);
             MySQL.getPatient(phone, formattedDate);
+            // Default password is date of birth in form: yyyy-mm-dd
+            Login.NewLogin.createPatientLogin(formattedDate, phone);
 
             //statusText.setText("Status: Created new patient.");
             pauseApp("Status: Created new patient: " + MySQL.patientFirstName, 4);

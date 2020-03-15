@@ -183,8 +183,9 @@ public class MySQL {
         return getResults("SELECT * FROM users WHERE user_phone = '" + phoneNumber + "';").get(0).get("user_passwordHash").toString();
     }
 
-    public static boolean isStaff = false;
+    public static boolean isStaff;
     public static boolean isRegistered(String phoneNumber) {
+        MySQL.isStaff = false;
         ArrayList<HashMap<String, Object>> getUsers = getResults("SELECT * FROM users WHERE user_phone = '" + phoneNumber + "';");
         if (getUsers.isEmpty()) {
             return false;
@@ -255,7 +256,7 @@ public class MySQL {
                         "WHERE room_id = " + givenRoomID + ";"
         );
         try{
-            return (String) getAllRoomResults.get(0).get("room_name");
+            return (String) getAllRoomResults.get(0).get("room_id");
         }catch (NullPointerException e){
             return "Room Not Found";
         }
@@ -303,6 +304,35 @@ public class MySQL {
                 "INSERT INTO notifications " +
                         "(notification_patient, notification_description, notification_dateTime) " +
                         "VALUES ('" + patientID + "', '" + description + "', '" + dateTime + "');"
+        );
+    }
+
+    // Manager methods
+    public static void approve (int givenHolidayID){
+        rawQuery("UPDATE holidays " +
+                "SET holiday_approved = 1 " +
+                "WHERE holiday_id = " + givenHolidayID + ";");
+    }
+
+    public static void deny (int givenHolidayID){
+        rawQuery("UPDATE holidays " +
+                "SET holiday_approved = -1 " +
+                "WHERE holiday_id = " + givenHolidayID + ";");
+    }
+
+    // To retrieve reason by reason id
+    public static String reasonName;
+    public static void getReasonName(int reasonid) {
+        ArrayList<HashMap<String, Object>> staffResults = rawQuery(
+                "SELECT * FROM holidayReasons WHERE holidayReasons_id = " + reasonid);
+        MySQL.reasonName = (String) staffResults.get(0).get("holidayReasons_description");
+    }
+
+    public static void makeLeaveRequest(Date start, Date end, int staff, int reason){
+        rawQuery(
+                "INSERT INTO holidays " +
+                        "(holiday_start, holiday_end, holiday_staff, holiday_approved, holiday_reason) " +
+                        "VALUES ('" + start + "', '" + end + "', " + staff + ", " + 0 + ", "+ reason +");"
         );
     }
 

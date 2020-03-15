@@ -185,15 +185,16 @@ public class ScheduleController implements Initializable {
             MySQL.getTreatment(treatmentid);
 
             MySQL.getStaffByID(staffID);
+            MySQL.getRoom((int) allResults.get(i).get("appointment_room"));
 
             if (MySQL.staffRole.equals("Dentist")) {
                 nurseid = (int) allResults.get(i).get("appointment_nurse");
                 MySQL.getStaffByID(nurseid);
-                entry.setTitle("Treatment:  " + MySQL.treatmentName + " \nRoom Number:  " + allResults.get(i).get("appointment_room") + "\nNurse:  " + MySQL.staffFirstName + " " + MySQL.staffSurname);
+                entry.setTitle("Treatment:  " + MySQL.treatmentName + " \nRoom Number:  " + allResults.get(i).get("appointment_room") + "\nFacilities:  " + MySQL.roomFacilities + "\nNurse:  " + MySQL.staffFirstName + " " + MySQL.staffSurname);
             } else {
                 dentistid = (int) allResults.get(i).get("appointment_dentist");
                 MySQL.getStaffByID(dentistid);
-                entry.setTitle("Treatment:  " + MySQL.treatmentName + " \nRoom Number:  " + allResults.get(i).get("appointment_room") + "\nDentist:  " + MySQL.staffFirstName + " " + MySQL.staffSurname);
+                entry.setTitle("Treatment:  " + MySQL.treatmentName + " \nRoom Number:  " + allResults.get(i).get("appointment_room") + "\nFacilities:  " + MySQL.roomFacilities + "\nDentist:  " + MySQL.staffFirstName + " " + MySQL.staffSurname);
             }
             Date d1 = (Date) allResults.get(i).get("appointment_date");
             LocalDate ld1 = d1.toLocalDate();
@@ -217,6 +218,36 @@ public class ScheduleController implements Initializable {
         }
         Scene recScene = new Scene(recParent);
 
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
+
+    public void profile(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../Profile/Profile.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
+
+    public void requestLeave(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../LeaveRequest/LeaveRequest.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
 
         //Set stage info
         Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();

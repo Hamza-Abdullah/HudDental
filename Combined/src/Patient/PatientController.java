@@ -24,6 +24,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.TimeZone;
 
 public class PatientController implements Initializable {
     @FXML
@@ -34,6 +35,8 @@ public class PatientController implements Initializable {
     public Text patientName;
     @FXML
     public HBox logout;
+    @FXML
+    public HBox profile;
 
     private AppointmentGrid appointmentPage;
     private VBox mainVBox;
@@ -50,6 +53,13 @@ public class PatientController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 logout(event);
+            }
+        });
+
+        profile.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                profile(event);
             }
         });
     }
@@ -100,6 +110,22 @@ public class PatientController implements Initializable {
         Parent recParent = null;
         try {
             recParent = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
+    }
+
+    @FXML
+    public void profile(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../Profile/Profile.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

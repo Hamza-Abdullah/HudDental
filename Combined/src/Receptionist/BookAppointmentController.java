@@ -181,7 +181,7 @@ public class BookAppointmentController implements Initializable {
         int treatmentID = (int) MySQL.getResults("SELECT * FROM treatments WHERE " +
                 "treatment_name = '" + treatment + "';").get(0).get("treatment_id");
         MySQL.newAppointment(MySQL.patientID, dentistID, nurseID, notes, formattedDate, "0", roomID, treatmentID, formattedTime);
-        MySQL.createBookingNotification(MySQL.patientID, "Your " + treatment + "appointment has been booked for " + formattedDate + " at " + time, getDateTime());
+        MySQL.createBookingNotification(MySQL.patientID, "Your " + treatment + " appointment has been booked for " + formattedDate + " at " + time, getDateTime());
 
         MySQL.getTreatment(treatmentID);
         MySQL.getPrice(Integer.parseInt(MySQL.treatmentBand));
@@ -199,15 +199,15 @@ public class BookAppointmentController implements Initializable {
     }
 
     public void clearBtnAction(MouseEvent mouseEvent) {
-        treatmentField.setValue(null);
-        phoneField.setText(null);
+        treatmentField.setValue("");
+        phoneField.setText("");
         dobField.setValue(null);
         appointmentDateField.setValue(null);
-        timeField.setText(null);
+        timeField.setText("");
         dentistField.setValue(null);
         nurseField.setValue(null);
         roomField.setValue(null);
-        notesField.setText(null);
+        notesField.setText("");
         statusText.setFill(Color.web("0x0000AA",1.0));
         statusText.setText("Status: Cleared fields.");
         disableFields(false);
@@ -270,5 +270,20 @@ public class BookAppointmentController implements Initializable {
     private String getDateTime(){
         String timeString = LocalDateTime.now().toString();
         return timeString.replace('T', ' ').substring(0, timeString.indexOf('.'));
+    }
+
+    public void requestLeave(MouseEvent mouseEvent) {
+        Parent recParent = null;
+        try {
+            recParent = FXMLLoader.load(getClass().getResource("../LeaveRequest/LeaveRequest.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene recScene = new Scene(recParent);
+
+        //Set stage info
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(recScene);
+        window.show();
     }
 }
